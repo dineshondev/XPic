@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMypicsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <br />
+                <h:commandLink action="#{mypicsController.destroyAndView}" value="#{bundle.ViewMypicsDestroyLink}"/>
+&nbsp;&nbsp;&nbsp;
+                <h:commandLink action="Edit" value="#{bundle.ViewMypicsEditLink}"/>
+&nbsp;&nbsp;&nbsp;
+                <h:commandLink action="#{mypicsController.prepareCreate}" value="#{bundle.ViewMypicsCreateLink}" />
+&nbsp;&nbsp;&nbsp;
+                <h:commandLink action="#{mypicsController.prepareList}" value="#{bundle.ViewMypicsShowAllLink}"/>
+&nbsp;&nbsp;&nbsp;
+                <h:commandLink value="#{bundle.ViewMypicsIndexLink}" action="/index" immediate="true" />
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMypicsLabel_picid}"/>
+                    <h:outputText value="#{mypicsController.selected.picid}" title="Picture Id"/>
+                    <h:outputText value="#{bundle.ViewMypicsLabel_picname}"/>
+                    <h:outputText value="#{mypicsController.selected.picname}" title="Name"/>
+                    <h:outputText value="#{bundle.ViewMypicsLabel_piclink}"/>
+                    <h:graphicImage value="#{mypicsController.selected.piclink}" title="Picture URL"/>
+                    <h:outputText value="#{bundle.ViewMypicsLabel_piccomment}"/>
+                    <h:outputText value="#{mypicsController.selected.piccomment}" title="Tweeted Comment"/>
+                </h:panelGrid>
+                
+
+            </h:form>
+            
+        </ui:define>
+    </ui:composition>
+
+</html>

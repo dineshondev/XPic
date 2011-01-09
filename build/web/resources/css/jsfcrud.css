@@ -1,0 +1,98 @@
+root { 
+    display: block;
+}
+
+body {
+    font-family: Gill, Helvetica, sans-serif;
+    color: black;
+    background-color: whitesmoke;
+    font-size: medium;
+    border-bottom: #e33b06;
+}
+
+a {
+    color: #e33b06;
+    border-color: #e33b06;
+}
+
+table {
+    empty-cells: show;
+}
+
+form.jsfcrud_list_form th, td th {
+    font-size: x-large;
+    color: snow;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-left-style: double;
+    border-right-style: double;
+    border-top-width: 1px;
+    border-bottom-width: 4px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-color: #eff5fa;
+    border-bottom-color: #eff5fa;
+    border-left-color: #eff5fa;
+    border-right-color: #eff5fa;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: darkgray;
+}
+
+td {
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: medium;
+}
+
+form.jsfcrud_list_form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-color: #eff5fa;
+    border-bottom-color: #eff5fa;
+    border-left-color: #eff5fa;
+    border-right-color: #eff5fa;
+    vertical-align: baseline;
+    padding-bottom: 4px;
+}
+
+tr.jsfcrud_odd_row {
+    background-color: #fefeff;
+    color: #4e6a71;
+}
+
+
+tr.jsfcrud_even_row {
+    background-color: gainsboro;
+    color: #4e6a71;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+img{
+    border-bottom-color: darkgrey;
+    border-bottom-style: double;
+    border-left: darkgrey;
+    border-right: darkgrey;
+    border-top: darkgrey;
+    border-width: thick;
+}
+
+link{
+    background-color: lightgray;
+}
+

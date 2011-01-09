@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMypicsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListMypicsEmpty}" rendered="#{mypicsController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{mypicsController.items.rowCount > 0}">
+                <h:outputText value="#{mypicsController.pagination.pageFirstItem + 1}..#{mypicsController.pagination.pageLastItem + 1}/#{mypicsController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{mypicsController.previous}" value="#{bundle.Previous} #{mypicsController.pagination.pageSize}" rendered="#{mypicsController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{mypicsController.next}" value="#{bundle.Next} #{mypicsController.pagination.pageSize}" rendered="#{mypicsController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{mypicsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListMypicsTitle_picid}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.picid}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListMypicsTitle_picname}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.picname}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListMypicsTitle_piclink}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.piclink}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListMypicsTitle_piccomment}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.piccomment}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{mypicsController.prepareView}" value="#{bundle.ListMypicsViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{mypicsController.prepareEdit}" value="#{bundle.ListMypicsEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{mypicsController.destroy}" value="#{bundle.ListMypicsDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{mypicsController.prepareCreate}" value="#{bundle.ListMypicsCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListMypicsIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

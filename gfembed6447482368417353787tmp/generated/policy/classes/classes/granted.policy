@@ -1,0 +1,10 @@
+/* AUTOMATICALLY GENERATED ON Mon Nov 29 02:24:17 EST 2010*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "picBean", "tweetImage,Local,java.lang.String,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "picBean", "getflickrImages,Local,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "picBean", "getflickrImages,Local,java.lang.String,java.lang.String";
+  permission javax.security.jacc.EJBMethodPermission "picBean", "getTweetedImages,Local,";
+};
+
